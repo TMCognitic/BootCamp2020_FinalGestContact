@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GestContact.Models.Global.Entities\GestContact.Models.Global.Entities.csproj" />
+    <ProjectReference Include="..\GestContact.Models.Repositories\GestContact.Models.Repositories.csproj" />
+  </ItemGroup>
+
+</Project>

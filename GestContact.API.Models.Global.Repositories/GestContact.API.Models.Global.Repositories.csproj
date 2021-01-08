@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Tools.Connections.Database" Version="2.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GestContact.Models.Global.Entities\GestContact.Models.Global.Entities.csproj" />
+    <ProjectReference Include="..\GestContact.Models.Repositories\GestContact.Models.Repositories.csproj" />
+  </ItemGroup>
+
+</Project>
