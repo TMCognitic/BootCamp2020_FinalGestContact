@@ -1,6 +1,6 @@
 ﻿using GestContact.API.Models.Client.Entities;
 using GestContact.Models.Repositories;
-using GCustomer = GestContact.Models.Global.Entities.Customer;
+using GCustomer = GestContact.API.Models.Global.Entities.Customer;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -1,7 +1,7 @@
 using GAuthRepository = GestContact.MVC.Models.Global.Repositories.AuthRepository;
-using GCustomer = GestContact.Models.Global.Entities.Customer;
+using GCustomer = GestContact.MVC.Models.Global.Entities.Customer;
 using GContactRepository = GestContact.MVC.Models.Global.Repositories.ContactRepository;
-using GContact = GestContact.Models.Global.Entities.Contact;
+using GContact = GestContact.MVC.Models.Global.Entities.Contact;
 using GestContact.MVC.Models.Client.Entities;
 using GestContact.MVC.Models.Client.Repositories;
 using GestContact.Models.Repositories;
@@ -18,7 +18,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using GestContact.API.Models.Client.Repositories;
 using GestContact.MVC.Inftrastructure;
 
 namespace GestContact.MVC
@@ -53,6 +52,11 @@ namespace GestContact.MVC
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+                ISessionManager sessionManager = sp.GetService<ISessionManager>();
+                if(sessionManager.Customer is not null)
+                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", sessionManager.Customer.Token);
+
                 return client;
             });
 

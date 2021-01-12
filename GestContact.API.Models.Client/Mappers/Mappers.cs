@@ -1,19 +1,19 @@
-﻿using GCustomer = GestContact.Models.Global.Entities.Customer;
-using GContact = GestContact.Models.Global.Entities.Contact;
+﻿using GCustomer = GestContact.API.Models.Global.Entities.Customer;
+using GContact = GestContact.API.Models.Global.Entities.Contact;
 using GestContact.API.Models.Client.Entities;
 
 namespace GestContact.API.Models.Client.Mappers
 {
-    static class Mappers
+    public static class Mappers
     {
-        internal static GCustomer ToGlobal(this Customer entity)
+        public static GCustomer ToGlobal(this Customer entity)
         {
             return new GCustomer() { Id = entity.Id, LastName = entity.LastName, FirstName = entity.FirstName, Email = entity.Email, Passwd = entity.Passwd };
         }
 
-        internal static Customer ToClient(this GCustomer entity)
+        public static Customer ToClient(this GCustomer entity)
         {
-            return new Customer(entity.Id, entity.LastName, entity.FirstName);
+            return new Customer(entity.Id, entity.LastName, entity.FirstName, entity.Email);
         }
 
         internal static GContact ToGlobal(this Contact entity)

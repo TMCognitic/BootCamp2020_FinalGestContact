@@ -1,5 +1,5 @@
-﻿using GCustomer = GestContact.Models.Global.Entities.Customer;
-using GContact = GestContact.Models.Global.Entities.Contact;
+﻿using GCustomer = GestContact.MVC.Models.Global.Entities.Customer;
+using GContact = GestContact.MVC.Models.Global.Entities.Contact;
 using GestContact.MVC.Models.Client.Entities;
 
 namespace GestContact.MVC.Models.Client.Mappers
@@ -13,7 +13,7 @@ namespace GestContact.MVC.Models.Client.Mappers
 
         internal static Customer ToClient(this GCustomer entity)
         {
-            return new Customer(entity.Id, entity.LastName, entity.FirstName);
+            return new Customer(entity.Id, entity.LastName, entity.FirstName, entity.Email, entity.Token);
         }
 
         internal static GContact ToGlobal(this Contact entity)

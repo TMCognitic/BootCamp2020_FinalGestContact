@@ -1,4 +1,4 @@
-﻿using GestContact.Models.Global.Entities;
+﻿using GestContact.API.Models.Global.Entities;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -12,7 +12,7 @@ namespace GestContact.API.Models.Global.Repositories.Mappers
     {
         internal static Customer ToCustomer(this IDataRecord dataRecord)
         {
-            return new Customer { Id = (int)dataRecord["Id"], LastName = (string)dataRecord["LastName"], FirstName = (string)dataRecord["FirstName"] };
+            return new Customer { Id = (int)dataRecord["Id"], LastName = (string)dataRecord["LastName"], FirstName = (string)dataRecord["FirstName"], Email = (string)dataRecord["Email"] };
         }
 
         internal static Contact ToContact(this IDataRecord dataRecord)

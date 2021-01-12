@@ -5,8 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\GestContact.Models.Global.Entities\GestContact.Models.Global.Entities.csproj" />
     <ProjectReference Include="..\GestContact.Models.Repositories\GestContact.Models.Repositories.csproj" />
+    <ProjectReference Include="..\GestContact.MVC.Models.Global.Entities\GestContact.MVC.Models.Global.Entities.csproj" />
   </ItemGroup>
 
 </Project>

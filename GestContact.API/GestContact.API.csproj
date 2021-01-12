@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\GestContact.API.Models.Client\GestContact.API.Models.Client.csproj" />
+    <ProjectReference Include="..\GestContact.API.Models.Client\GestContact.API.Models.Client.csproj" />
     <ProjectReference Include="..\GestContact.API.Models.Global.Repositories\GestContact.API.Models.Global.Repositories.csproj" />
     <ProjectReference Include="..\GestContact.Models.Forms\GestContact.Models.Forms.csproj" />
     <ProjectReference Include="..\GestContact.Models.Repositories\GestContact.Models.Repositories.csproj" />

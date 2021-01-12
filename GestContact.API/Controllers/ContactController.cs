@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using GestContact.Models.Forms;
+using GestContact.API.Infrastructure.Security;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -14,6 +15,7 @@ namespace GestContact.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [AuthRequired]
     public class ContactController : ControllerBase
     {
         private readonly IContactRepository<Contact> _repository;

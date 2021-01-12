@@ -1,6 +1,6 @@
 ﻿using GestContact.MVC.Models.Client.Entities;
 using GestContact.Models.Repositories;
-using GCustomer = GestContact.Models.Global.Entities.Customer;
+using GCustomer = GestContact.MVC.Models.Global.Entities.Customer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using GestContact.MVC.Models.Client.Mappers;
 
-namespace GestContact.API.Models.Client.Repositories
+namespace GestContact.MVC.Models.Client.Repositories
 {
     public class AuthRepository : IAuthRepository<Customer>
     {

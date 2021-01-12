@@ -4,7 +4,6 @@ using System.Text.Json.Serialization;
 
 namespace GestContact.MVC.Models.Client.Entities
 {
-    [DataContract]
     public class Customer
     {
         public int Id { get; private set; }
@@ -12,11 +11,14 @@ namespace GestContact.MVC.Models.Client.Entities
         public string FirstName { get; private set; }
         public string Email { get; private set; }
         public string Passwd { get; private set; }
-        internal Customer(int id, string lastName, string firstName)
+        public string Token { get; private set; }
+        internal Customer(int id, string lastName, string firstName, string email, string token)
         {
             Id = id;
             LastName = lastName;
             FirstName = firstName;
+            Email = email;
+            Token = token;
         }
 
         public Customer(string lastName, string firstName, string email, string passwd)

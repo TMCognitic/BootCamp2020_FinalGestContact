@@ -1,5 +1,5 @@
 ﻿using GestContact.API.Models.Global.Repositories.Mappers;
-using GestContact.Models.Global.Entities;
+using GestContact.API.Models.Global.Entities;
 using GestContact.Models.Repositories;
 using System;
 using System.Collections.Generic;

@@ -50,7 +50,7 @@ namespace GestContact.MVC.Controllers
 
                     if (customer is not null)
                     {
-                        _sessionManager.Customer = new SessionCustomer() { Id = customer.Id, LastName = customer.LastName, FirstName = customer.FirstName };
+                        _sessionManager.Customer = new SessionCustomer() { Id = customer.Id, LastName = customer.LastName, FirstName = customer.FirstName, Token = customer.Token };
                         return RedirectToAction("Index", "Contact");
                     }
 

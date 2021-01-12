@@ -1,6 +1,6 @@
 ﻿using GestContact.MVC.Models.Client.Entities;
 using GestContact.Models.Repositories;
-using GContact = GestContact.Models.Global.Entities.Contact;
+using GContact = GestContact.MVC.Models.Global.Entities.Contact;
 using System.Collections.Generic;
 using System.Linq;
 using GestContact.MVC.Models.Client.Mappers;

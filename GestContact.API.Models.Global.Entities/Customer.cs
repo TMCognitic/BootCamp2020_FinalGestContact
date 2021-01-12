@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace GestContact.Models.Global.Entities
+namespace GestContact.API.Models.Global.Entities
 {
     public class Customer
     {

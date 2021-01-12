@@ -1,4 +1,6 @@
-﻿using GestContact.API.Models.Client.Entities;
+﻿using GestContact.API.Infrastructure.Security;
+using GestContact.API.Models.Client.Entities;
+using GestContact.API.Models.Client.Mappers;
 using GestContact.Models.Forms;
 using GestContact.Models.Repositories;
 using Microsoft.AspNetCore.Http;
@@ -17,11 +19,13 @@ namespace GestContact.API.Controllers
     {
         private readonly IAuthRepository<Customer> _repository;
         private readonly ILogger _logger;
+        private readonly ITokenService _tokenService;
 
-        public AuthController(ILogger<AuthController> logger, IAuthRepository<Customer> repository)
+        public AuthController(ILogger<AuthController> logger, ITokenService tokenService, IAuthRepository<Customer> repository)
         {
             _repository = repository;
             _logger = logger;
+            _tokenService = tokenService;
         }
 
         [HttpPost("Login")]
@@ -40,9 +44,11 @@ namespace GestContact.API.Controllers
                     return StatusCode(StatusCodes.Status500InternalServerError);
                 }
 
-
                 if (customer is not null)
+                {
+                    customer.Token = _tokenService.GenerateToken(customer.ToGlobal());
                     return Ok(customer);
+                }
                 else
                     return Unauthorized();
             }

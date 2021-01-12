@@ -19,11 +19,15 @@ namespace GestContact.API.Models.Client.Entities
         [IgnoreDataMember]
         [JsonIgnore]
         public string Passwd { get; private set; }
-        internal Customer(int id, string lastName, string firstName)
+        [DataMember]
+        public string Token { get; set; }
+
+        internal Customer(int id, string lastName, string firstName, string email)
         {
             Id = id;
             LastName = lastName;
             FirstName = firstName;
+            Email = email;
         }
 
         public Customer(string lastName, string firstName, string email, string passwd)

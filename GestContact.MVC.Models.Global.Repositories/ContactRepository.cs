@@ -1,4 +1,4 @@
-﻿using GestContact.Models.Global.Entities;
+﻿using GestContact.MVC.Models.Global.Entities;
 using GestContact.Models.Repositories;
 using System;
 using System.Collections.Generic;

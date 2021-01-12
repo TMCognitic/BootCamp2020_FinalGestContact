@@ -1,9 +1,10 @@
 using GAuthRepository = GestContact.API.Models.Global.Repositories.AuthRepository;
-using GCustomer = GestContact.Models.Global.Entities.Customer;
+using GCustomer = GestContact.API.Models.Global.Entities.Customer;
 using GContactRepository = GestContact.API.Models.Global.Repositories.ContactRepository;
-using GContact = GestContact.Models.Global.Entities.Contact;
+using GContact = GestContact.API.Models.Global.Entities.Contact;
 using GestContact.API.Models.Client.Entities;
 using GestContact.API.Models.Client.Repositories;
+using GestContact.API.Infrastructure.Security;
 using GestContact.Models.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -42,6 +43,7 @@ namespace GestContact.API
             services.AddSingleton<IAuthRepository<Customer>, AuthRepository>();
             services.AddSingleton<IContactRepository<GContact>, GContactRepository>();
             services.AddSingleton<IContactRepository<Contact>, ContactRepository>();
+            services.AddSingleton<ITokenService, TokenService>();
 
         }
 
