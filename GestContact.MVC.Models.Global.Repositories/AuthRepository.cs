@@ -8,6 +8,7 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using GestContact.Models.Forms;
 
 namespace GestContact.MVC.Models.Global.Repositories
 {
@@ -40,7 +41,8 @@ namespace GestContact.MVC.Models.Global.Repositories
         {
             using (_client)
             {
-                string contentJson = JsonSerializer.Serialize(entity);
+                RegisterForm form = new RegisterForm() { LastName = entity.LastName, FirstName = entity.FirstName, Email = entity.Email, Passwd = entity.Passwd, Passwd2 = entity.Passwd };
+                string contentJson = JsonSerializer.Serialize(form);
                 HttpContent httpContent = new StringContent(contentJson);
                 httpContent.Headers.ContentType = new MediaTypeWithQualityHeaderValue("application/json");
 
